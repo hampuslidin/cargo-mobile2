@@ -12,6 +12,7 @@ use crate::{
         cli::{Report, Reportable, TextWrapper},
         ln,
     },
+    DuctExpressionExt,
 };
 use std::path::{Path, PathBuf};
 
@@ -102,7 +103,7 @@ pub fn gen(
     #[cfg(target_arch = "x86_64")]
     let default_archs = [String::from("arm64"), String::from("x86_64")];
     #[cfg(target_arch = "aarch64")]
-    let default_archs = [String::from("arm64")];
+    let default_archs = [String::from("arm64"), String::from("arm64-sim")];
     bike.filter_and_process(
         src,
         &dest,
@@ -198,6 +199,7 @@ pub fn gen(
             cmd.arg(&project_yml_path);
             Ok(())
         })
+        .dup_stdio()
         .run()
         .map_err(Error::XcodegenFailed)?;
 
@@ -209,6 +211,7 @@ pub fn gen(
                 &format!("--project-directory={}", dest.display()),
             ],
         )
+        .dup_stdio()
         .run()
         .map_err(Error::PodInstallFailed)?;
     }

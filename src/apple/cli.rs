@@ -453,8 +453,13 @@ impl Exec for Input {
                         "arm64" => ("aarch64_apple_ios", "aarch64-apple-ios"),
                         // FIXME triple for cflags seems incorrect and we don't actually need to
                         // set it when cross compile simulator target.
-                        // "arm64-sim" => ("aarch64_apple_ios", "aarch64-apple-ios"),
+                        "arm64-sim" => ("aarch64_apple_ios_sim", "aarch64-apple-ios-sim"),
                         "x86_64" => ("x86_64_apple_ios", "x86_64-apple-ios"),
+                        "Simulator" => {
+                            // when using Xcode, the arches for a simulator build will be ['Simulator', 'arm64-sim'] instead of ['arm64-sim']
+                            // so we ignore that on our end
+                            continue;
+                          }
                         _ => return Err(Error::ArchInvalid { arch }),
                     };
                     let cflags = format!("CFLAGS_{}", triple);

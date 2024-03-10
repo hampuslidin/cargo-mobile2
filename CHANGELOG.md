@@ -1,5 +1,26 @@
 # Changelog
 
+## \[0.10.4]
+
+- [`7a1066c`](https://github.com/tauri-apps/cargo-mobile2/commit/7a1066cd93d0e4cf158ccfa6a41652f2934758da)([#283](https://github.com/tauri-apps/cargo-mobile2/pull/283)) Use `adb install -r` to try replacing the android application while installing it on the device. This elimnates the need to uninstall the application from a previous run when using a real device.
+- [`5a84ab2`](https://github.com/tauri-apps/cargo-mobile2/commit/5a84ab256c376e0424e2ddd6ffc44c5f0d9b5fbe)([#281](https://github.com/tauri-apps/cargo-mobile2/pull/281)) Update `wry` template to `wry@0.37`
+
+## \[0.10.3]
+
+- [`92eda19`](https://github.com/tauri-apps/cargo-mobile2/commit/92eda19af2a10b80470a96ade3d3dbd2a4d2af6f)([#279](https://github.com/tauri-apps/cargo-mobile2/pull/279)) Fixes log output on iOS simulators.
+
+## \[0.10.2]
+
+- [\`\`](https://github.com/tauri-apps/cargo-mobile2/commit/undefined) Fix adb usage for NAPI context following v0.10.1 fix.
+
+## \[0.10.1]
+
+- [`b12ef08`](https://github.com/tauri-apps/cargo-mobile2/commit/b12ef081c0dba630e92f924a34d4c768ef1fa522)([#277](https://github.com/tauri-apps/cargo-mobile2/pull/277)) Fix child process spawning on NAPI contexts.
+
+## \[0.10.0]
+
+- [`d90ccf4`](https://github.com/tauri-apps/cargo-mobile2/commit/d90ccf4c50dc180e082693b310d1f34f67d977e7)([#273](https://github.com/tauri-apps/cargo-mobile2/pull/273)) The development team configuration is now optional so you can develop on a simulator without a signing certificate.
+
 ## \[0.9.1]
 
 - [`01d52ca`](https://github.com/tauri-apps/cargo-mobile2/commit/01d52ca2c1a582cb5a06193629d2b0bec3282ac6)([#265](https://github.com/tauri-apps/cargo-mobile2/pull/265)) Use devicectl even if iOS device is disconnected.
