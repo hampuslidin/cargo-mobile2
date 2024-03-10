@@ -103,7 +103,7 @@ pub fn gen(
     #[cfg(target_arch = "x86_64")]
     let default_archs = [String::from("arm64"), String::from("x86_64")];
     #[cfg(target_arch = "aarch64")]
-    let default_archs = [String::from("arm64")];
+    let default_archs = [String::from("arm64"), String::from("arm64-sim")];
     bike.filter_and_process(
         src,
         &dest,
